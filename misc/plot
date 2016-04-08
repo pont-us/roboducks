@@ -1,0 +1,17 @@
+set terminal postscript eps color solid
+set output "pgraph2.eps"
+set xlabel "Number of passes"
+set ylabel "Weight"
+set ls 1 lt 1 lw 1
+set nokey
+plot "ptrain" using 1 with lines ls 1, \
+  "ptrain" using 2 with lines ls 1, \
+  "ptrain" using 3 with lines ls 1, \
+  "ptrain" using 4 with lines ls 1, \
+  "ptrain" using 5 with lines ls 1, \
+  "ptrain" using 6 with lines ls 1, \
+  "ptrain" using 7 with lines ls 1, \
+  "ptrain" using 8 with lines ls 1, \
+  "ptrain" using 9 with lines ls 1, \
+  "ptrain" using 10 with lines ls 1, \
+  "ptrain" using 11 with lines ls 1

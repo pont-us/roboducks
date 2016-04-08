@@ -1,0 +1,59 @@
+\section{Genetic training}
+\label{theory-ga}
+
+Genetic algorithms are conceptually simple, but are widely applicable
+and can prove highly effective. The method is modelled on the
+principle of natural selection. It can be employed on virtually any
+problem where (1) the parameters of a possible solution can be encoded
+as a relatively compact sequence of numbers or symbols and (2) there
+exists a \emph{fitness function} or \emph{objective function} which
+can assign a numerical value reflecting how ``good'' a candidate
+solution is.\footnote{The satisfaction of these two criteria does not,
+  of course, guarantee that a particular genetic algorithm will work!}
+
+Genetic algorithms come in numerous variations, but given a suitable
+problem the general procedure is as follows\footnote{This summary is
+  based on the descriptions given in \cite{wasserman93} and 
+  \cite{winston92}.}:
+
+\begin{enumerate}
+
+\item Devise a way of encoding the parameters of a solution into a
+  fixed-length string or numbers or symbols. Very often, binary digits
+  are used, but this is by no means mandatory. The choice of encoding
+  method can have a huge impact on the performance of the algorithm.
+
+\item Initialize a set of randomly generated strings, called the
+  \emph{population} for obvious reasons.
+
+\item Repeatedly apply the following three techniques:
+
+  \begin{enumerate}
+    
+  \item \emph{Reproduction}: Assess the fitness of each individual in
+    the population, and produce a ``weighted copy'' of the current
+    population. That is, initialize a new population of the same size
+    by, for each string, copying a string selected at random from the
+    old population. The selection is linearly weighted by fitness, so
+    that fitter strings have a higher chance of being selected.
+
+  \item \emph{Crossover}: select pairs of strings from the
+    population. For each pair, randomly select a point within the
+    length of a string. Break both strings at this point, and exchange
+    their final segments. For example, \texttt{001122} and
+    \texttt{222333} might be split and recombined halfway to give
+    \texttt{001333} and \texttt{222122}.
+    
+  \item \emph{Mutation}: perturb one or more strings. A string is
+    selected at random, an element selected at random within that
+    string, and a random modification applied to that element.
+    Traditionally this method is used very sparingly; mutation rates
+    of the order of one in a thousand are common.
+ 
+  \end{enumerate}
+
+\end{enumerate}
+
+The genetic algorithm used in this project deviates somewhat from this
+standard outline; the differences are described in Section
+\ref{theory-ga-nn}.

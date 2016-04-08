@@ -1,0 +1,9 @@
+#! /usr/bin/perl -w
+
+while (glob "code/{ducksim,neurotic,testsuite}/*.java") {
+
+  my $in = $_;
+  s!code/(.*)/(.*).java!pretty/$1/$2.tex!;
+  system ("lgrind -i -o $_ $in");
+
+}

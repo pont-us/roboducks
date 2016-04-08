@@ -1,0 +1,23 @@
+#Name XOR
+#Epoch 0
+#ReInit 0
+#Layer Input Layer
+#Unit 
+#Unit 
+#Layer Hidden Layer
+#Unit hid_1
+-0.09491354
+#Con_Group 0
+0.16837797
+-0.09263298
+#Unit hid_2
+-0.16567466
+#Con_Group 0
+0.014543027
+-0.092297554
+#Layer Output Layer
+#Unit output
+-0.09300038
+#Con_Group 0
+-0.17678773
+-0.19065061

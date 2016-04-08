@@ -1,0 +1,27 @@
+<project name="Roboducks" default="jar">
+
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
+
+  <target name="compile">
+    <mkdir dir="build/classes"/>
+    <javac srcdir="src" destdir="build/classes"
+           includeantruntime="false" />
+  </target>
+
+  <target name="jar" depends="compile">
+    <mkdir dir="build/jar"/>
+    <jar destfile="roboducks.jar" basedir="build/classes">
+      <manifest>
+        <attribute name="Main-Class"
+		   value="net.talvi.roboducks.ducksim.DuckSim"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run" depends="jar">
+    <java jar="roboducks.jar" fork="true"/>
+  </target>
+
+</project>

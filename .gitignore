@@ -1,0 +1,10 @@
+*~
+build
+report/*.aux
+report/*.log
+report/*.bbl
+report/*.toc
+report/*.blg
+report/report.pdf
+report/figs/*-converted-to.pdf
+roboducks.jar
